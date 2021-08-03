@@ -2,8 +2,8 @@ def clean_impasses(laby):
     tableau = laby.tableau
 
     # First clean, on ajoute les chemins:
-    for ligne in tableau:
-        for case in ligne:
+    for lignes in tableau:
+        for case in lignes:
             if case.path:
                 case.full_path = True
 
@@ -11,8 +11,8 @@ def clean_impasses(laby):
     stop = 0
     while stop != 2:
         stop += 1
-        for ligne in tableau:
-            for case in ligne:
+        for lignes in tableau:
+            for case in lignes:
                 if not case.full_path:
                     continue
                 if case is laby.depart or case is laby.arrive:
